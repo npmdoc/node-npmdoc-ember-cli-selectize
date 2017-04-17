@@ -1,0 +1,256 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/miguelcobain/ember-cli-selectize#readme">ember-cli-selectize (v0.5.12)</a>
+</h1>
+<h4>An Ember and Selectize integration, packaged as an Ember-cli addon.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-selectize">module ember-cli-selectize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-selectize.environment">
+            function <span class="apidocSignatureSpan">ember-cli-selectize.</span>environment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-selectize.included">
+            function <span class="apidocSignatureSpan">ember-cli-selectize.</span>included
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ember-cli-selectize.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-selectize.environment">module ember-cli-selectize.environment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-selectize.environment.environment">
+            function <span class="apidocSignatureSpan">ember-cli-selectize.</span>environment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-selectize.included">module ember-cli-selectize.included</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-selectize.included.included">
+            function <span class="apidocSignatureSpan">ember-cli-selectize.</span>included
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-selectize" id="apidoc.module.ember-cli-selectize">module ember-cli-selectize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-selectize.environment" id="apidoc.element.ember-cli-selectize.environment">
+        function <span class="apidocSignatureSpan">ember-cli-selectize.</span>environment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">environment = function () {
+  return { };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-selectize.included" id="apidoc.element.ember-cli-selectize.included">
+        function <span class="apidocSignatureSpan">ember-cli-selectize.</span>included
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">included = function (app) {
+  this._super.included.apply(this, arguments);
+
+  // If the addon has the _findHost() method (in ember-cli &gt;= 2.7.0), we'll just
+  // use that.
+  if (typeof this._findHost === 'function') {
+    app = this._findHost();
+  }
+
+  // Otherwise, we'll use this implementation borrowed from the _findHost()
+  // method in ember-cli.
+  // Keep iterating upward until we don't have a grandparent.
+  // Has to do this grandparent check because at some point we hit the project.
+  var current = this;
+  do {
+    app = current.app || app;
+  } while (current.parent.parent &amp;&amp; (current = current.parent));
+
+  //default theme name is 'default'
+  var options = { theme: 'default' };
+  if (app.options &amp;&amp; app.options['ember-cli-selectize']) {
+    options = app.options['ember-cli-selectize'];
+  }
+
+  if (process.env.EMBER_CLI_FASTBOOT !== 'true') {
+    //import theme based on options
+    if (options.theme) {
+      app.import(app.bowerDirectory + '/selectize/dist/css/selectize.' + options.theme + '.css');
+    }
+
+    //import javascript
+    app.import(app.bowerDirectory + '/selectize/dist/js/standalone/selectize.js');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-selectize.environment" id="apidoc.module.ember-cli-selectize.environment">module ember-cli-selectize.environment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-selectize.environment.environment" id="apidoc.element.ember-cli-selectize.environment.environment">
+        function <span class="apidocSignatureSpan">ember-cli-selectize.</span>environment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">environment = function () {
+  return { };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-selectize.included" id="apidoc.module.ember-cli-selectize.included">module ember-cli-selectize.included</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-selectize.included.included" id="apidoc.element.ember-cli-selectize.included.included">
+        function <span class="apidocSignatureSpan">ember-cli-selectize.</span>included
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">included = function (app) {
+  this._super.included.apply(this, arguments);
+
+  // If the addon has the _findHost() method (in ember-cli &gt;= 2.7.0), we'll just
+  // use that.
+  if (typeof this._findHost === 'function') {
+    app = this._findHost();
+  }
+
+  // Otherwise, we'll use this implementation borrowed from the _findHost()
+  // method in ember-cli.
+  // Keep iterating upward until we don't have a grandparent.
+  // Has to do this grandparent check because at some point we hit the project.
+  var current = this;
+  do {
+    app = current.app || app;
+  } while (current.parent.parent &amp;&amp; (current = current.parent));
+
+  //default theme name is 'default'
+  var options = { theme: 'default' };
+  if (app.options &amp;&amp; app.options['ember-cli-selectize']) {
+    options = app.options['ember-cli-selectize'];
+  }
+
+  if (process.env.EMBER_CLI_FASTBOOT !== 'true') {
+    //import theme based on options
+    if (options.theme) {
+      app.import(app.bowerDirectory + '/selectize/dist/css/selectize.' + options.theme + '.css');
+    }
+
+    //import javascript
+    app.import(app.bowerDirectory + '/selectize/dist/js/standalone/selectize.js');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
