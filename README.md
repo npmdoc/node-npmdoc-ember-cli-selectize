@@ -1,4 +1,7 @@
-# api documentation for  [ember-cli-selectize (v0.5.12)](https://github.com/miguelcobain/ember-cli-selectize#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ember-cli-selectize.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ember-cli-selectize) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ember-cli-selectize.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ember-cli-selectize)
+# npmdoc-ember-cli-selectize
+
+#### basic api documentation for  [ember-cli-selectize (v0.5.12)](https://github.com/miguelcobain/ember-cli-selectize#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ember-cli-selectize.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ember-cli-selectize) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ember-cli-selectize.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ember-cli-selectize)
+
 #### An Ember and Selectize integration, packaged as an Ember-cli addon.
 
 [![NPM](https://nodei.co/npm/ember-cli-selectize.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ember-cli-selectize)
@@ -92,7 +95,8 @@
         "start": "ember server",
         "test": "ember try:each"
     },
-    "version": "0.5.12"
+    "version": "0.5.12",
+    "bin": {}
 }
 ```
 
